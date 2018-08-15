@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import ftm.mailclienttest.pages.*;
 import ftm.mailclienttest.webdriverthread.Browser;
 
-public class PageObjectMailClientTest1 {
+public class MailClientTest {
 	public static WebDriver driver;
 
 	@BeforeClass
@@ -40,7 +40,7 @@ public class PageObjectMailClientTest1 {
 		String text = "Getting some knowledge";
 		HomePage homePage = new HomePage(driver);
 		homePage.clickEmailButton();
-		RightPanel rightPanel = new RightPanel(driver);
+		LeftPanel rightPanel = new LeftPanel(driver);
 		EmailPopUp emailPopUp = rightPanel.clickWriteEmailButton();
 		emailPopUp.fillInToField(to);
 		emailPopUp.fillInSubjectField(subject);
@@ -74,7 +74,7 @@ public class PageObjectMailClientTest1 {
 
 	@Test(priority = 6)
 	public void sendEmailFromDrafts() {
-		RightPanel rightPanel = new RightPanel(driver);
+		LeftPanel rightPanel = new LeftPanel(driver);
 		DraftPage draftPage = new DraftPage(driver);
 		draftPage.clickSendEmailButton();
 		draftPage.refreshDraftPage();
@@ -84,7 +84,7 @@ public class PageObjectMailClientTest1 {
 	@Test(priority = 7)
 	public void checkEmailIsSent() {
 		String subject = "Learn To Automate";
-		RightPanel rightPanel = new RightPanel(driver);
+		LeftPanel rightPanel = new LeftPanel(driver);
 		SentPage sentPage = rightPanel.clickSentButton();
 		sentPage.clickSentEmail();
 		Assert.assertEquals(sentPage.getTextFromEmailChain(), subject);

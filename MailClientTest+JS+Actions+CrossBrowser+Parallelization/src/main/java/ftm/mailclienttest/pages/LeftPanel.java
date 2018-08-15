@@ -5,12 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 import ftm.mailclienttest.screenshoter.Screenshoter;
 
-public class RightPanel extends AbstractPage{
+public class LeftPanel extends AbstractPage{
 	private static final By SENT_BUTTON_LOCATOR = By.xpath("//a[@href='https://mail.google.com/mail/u/0/#sent']");
 	private static final By DRAFTS_BUTTON_LOCATOR = By.xpath("//a[@href='https://mail.google.com/mail/u/0/#drafts']");
 	private static final By WRITE_EMAIL_BUTTON_LOCATOR = By.xpath("//div[@class='T-I J-J5-Ji T-I-KE L3']");
 	
-	public RightPanel(WebDriver driver) {
+	public LeftPanel(WebDriver driver) {
 		super(driver);
 	}
 	
@@ -39,6 +39,7 @@ public class RightPanel extends AbstractPage{
 	}
 	
 	public String getDraftsLocatorText() {
+		waitForElementVisible(DRAFTS_BUTTON_LOCATOR);
 		return driver.findElement(DRAFTS_BUTTON_LOCATOR).getText();
 	}
 }
