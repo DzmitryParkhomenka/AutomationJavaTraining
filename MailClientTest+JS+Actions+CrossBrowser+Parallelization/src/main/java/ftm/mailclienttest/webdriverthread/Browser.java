@@ -1,4 +1,4 @@
-package ftm.mailclienttest.webdriversingle;
+package ftm.mailclienttest.webdriverthread;
 
 import java.net.MalformedURLException;
 import java.net.URL;

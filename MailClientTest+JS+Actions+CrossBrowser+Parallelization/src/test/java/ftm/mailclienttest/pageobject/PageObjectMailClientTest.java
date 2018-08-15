@@ -10,7 +10,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import ftm.mailclienttest.pages.*;
-import ftm.mailclienttest.webdriversingle.Browser;
+import ftm.mailclienttest.webdriverthread.Browser;
 
 public class PageObjectMailClientTest {
 	public static WebDriver driver;
