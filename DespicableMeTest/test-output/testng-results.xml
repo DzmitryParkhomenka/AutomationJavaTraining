@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="7477" started-at="2018-08-13T17:39:28Z" finished-at="2018-08-13T17:39:35Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="7477" started-at="2018-08-13T17:39:28Z" finished-at="2018-08-13T17:39:35Z">
+      <class name="test.test.AppTest">
+        <test-method status="PASS" signature="openUrl()[pri:1, instance:test.test.AppTest@224edc67]" name="openUrl" duration-ms="2886" started-at="2018-08-13T17:39:28Z" finished-at="2018-08-13T17:39:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openUrl -->
+        <test-method status="PASS" signature="enterTextToSearchField()[pri:2, instance:test.test.AppTest@224edc67]" name="enterTextToSearchField" duration-ms="1522" started-at="2018-08-13T17:39:31Z" finished-at="2018-08-13T17:39:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterTextToSearchField -->
+        <test-method status="PASS" signature="clickSearchResult()[pri:3, instance:test.test.AppTest@224edc67]" name="clickSearchResult" duration-ms="1320" started-at="2018-08-13T17:39:32Z" finished-at="2018-08-13T17:39:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickSearchResult -->
+        <test-method status="PASS" signature="checkViewsCounter()[pri:4, instance:test.test.AppTest@224edc67]" name="checkViewsCounter" duration-ms="1053" started-at="2018-08-13T17:39:34Z" finished-at="2018-08-13T17:39:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkViewsCounter -->
+        <test-method status="PASS" signature="checkThatWeOnYoutubePage()[pri:5, instance:test.test.AppTest@224edc67]" name="checkThatWeOnYoutubePage" duration-ms="96" started-at="2018-08-13T17:39:35Z" finished-at="2018-08-13T17:39:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkThatWeOnYoutubePage -->
+        <test-method status="PASS" signature="closeDriver()[pri:6, instance:test.test.AppTest@224edc67]" name="closeDriver" duration-ms="575" started-at="2018-08-13T17:39:35Z" finished-at="2018-08-13T17:39:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- test.test.AppTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
