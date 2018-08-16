@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends AbstractPage{
 	private static final String HOME_PAGE_URL = "https://www.google.com";
 	
-	@FindBy(xpath = "//input[@title='Поиск']")
+	@FindBy(xpath = "//*[@id=\"lst-ib\"]")
 	private WebElement inputField;
 	
 	@FindBy(xpath = "(//input[@type='submit'])[1]")

@@ -23,10 +23,9 @@ public class YoutubeVideoPage extends AbstractPage{
 	}
 	
 	public Long getTextFromCounter() {
-		String a = counterElement.getText().substring(0, 2);
-		String b = counterElement.getText().substring(3, 6);
-		String c = counterElement.getText().substring(7, 10);
-		return Long.parseLong(a + b + c);
+		String a = counterElement.getText().substring(0, 10);
+		String b = a.replace(" ", "");
+		return Long.parseLong(b);
 	}
 	
 }

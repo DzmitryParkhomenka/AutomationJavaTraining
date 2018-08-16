@@ -6,10 +6,6 @@
       <class name="test.test.AppTest">
         <methods>
           <include name="checkViewsCounter"/>
-          <include name="openUrl"/>
-          <include name="checkThatWeOnYoutubePage"/>
-          <include name="clickSearchResult"/>
-          <include name="enterTextToSearchField"/>
         </methods>
       </class> <!-- test.test.AppTest -->
     </classes>
