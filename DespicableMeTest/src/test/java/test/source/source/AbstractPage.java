@@ -1,11 +1,11 @@
-package source;
+package test.source.source;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import source.WebDriverSingleton;
+import test.source.source.WebDriverSingleton;
 
 public class AbstractPage {
 	protected WebDriver driver;

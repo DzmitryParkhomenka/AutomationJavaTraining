@@ -3,10 +3,7 @@ package test.test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import source.HomePage;
-import source.SearchResultPage;
-import source.WebDriverSingleton;
-import source.YoutubeVideoPage;
+import test.source.source.*;
 
 public class AppTest {
 	@Test(priority = 1)

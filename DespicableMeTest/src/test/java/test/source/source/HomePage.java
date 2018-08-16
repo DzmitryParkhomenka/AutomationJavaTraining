@@ -1,8 +1,9 @@
-package source;
+package test.source.source;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 
 public class HomePage extends AbstractPage{
 	private static final String HOME_PAGE_URL = "https://www.google.com";
