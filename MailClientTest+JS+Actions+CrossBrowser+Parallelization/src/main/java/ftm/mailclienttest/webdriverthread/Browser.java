@@ -19,6 +19,7 @@ public class Browser {
     }
 	
 	public static RemoteWebDriver getRemDriver(String browser) throws MalformedURLException {
+		//return new RemoteWebDriver(new URL("http://192.168.100.6:4444/wd/hub"), getBrowserCapabilities(browser));
 		return new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), getBrowserCapabilities(browser));
 	}
 
