@@ -1,4 +1,4 @@
-package ftm.mailclienttest.pageobject;
+package ftm.mailclienttest.testscenarios;
 
 import java.net.MalformedURLException;
 
@@ -9,8 +9,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import ftm.mailclienttest.businessobjects.User;
 import ftm.mailclienttest.pages.*;
-import ftm.mailclienttest.webdriverthread.Browser;
+import ftm.mailclienttest.webdriver.WebDriverInit;
 
 public class MailClientTest {
 	public static WebDriver driver;
@@ -18,7 +19,7 @@ public class MailClientTest {
 	@BeforeClass
 	@Parameters("browser")
 	public static void getBrowserName(String browser) throws MalformedURLException{
-		driver = Browser.getDriver(browser);
+		driver = WebDriverInit.getDriver(browser);
 	}
 
 	@Test(priority = 1)
@@ -26,9 +27,9 @@ public class MailClientTest {
 		HomePage homePage = new HomePage(driver);
 		homePage.openPage();
 		AccountPage accountPage = homePage.clickEnterEmailButton();
-		accountPage.fillInEmailField("dimos.eskimos@gmail.com");
+		accountPage.fillInEmailField(new User());
 		accountPage.clickSubmitEmailButton();
-		accountPage.fillInPasswordField("Jkmrfghbdtn20");
+		accountPage.fillInPasswordField(new User());
 		accountPage.clickSubmitPasswordButton(homePage);
 		Assert.assertTrue(driver.findElement(homePage.getEmailLoggedIcon()).isDisplayed(), "Logged icon is not displayed");
 	}
@@ -47,9 +48,7 @@ public class MailClientTest {
 		emailPopUp.fillInTextboxField(text);
 		emailPopUp.clickSaveCloseButton();
 		DraftPage draftPage = rightPanel.clickDraftsButton();
-		draftPage.refreshDraftPage();
 		draftPage.openDraftURL();
-		draftPage.refreshDraftPage();
 		Assert.assertEquals(draftPage.getTextFromTopic(), subject);
 	}
 
@@ -77,7 +76,6 @@ public class MailClientTest {
 		LeftPanel rightPanel = new LeftPanel(driver);
 		DraftPage draftPage = new DraftPage(driver);
 		draftPage.clickSendEmailButton();
-		draftPage.refreshDraftPage();
 		Assert.assertEquals(rightPanel.getDraftsLocatorText(), "Черновики");
 	}
 

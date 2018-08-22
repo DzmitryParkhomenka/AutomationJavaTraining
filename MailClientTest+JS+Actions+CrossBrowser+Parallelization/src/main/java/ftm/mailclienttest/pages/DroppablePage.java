@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import ftm.mailclienttest.screenshoter.Screenshoter;
+import ftm.mailclienttest.tools.Screenshoter;
 
 public class DroppablePage extends ActionsPage{
 	private static final By SQUARE_LOCATOR = By.cssSelector("#draggable");

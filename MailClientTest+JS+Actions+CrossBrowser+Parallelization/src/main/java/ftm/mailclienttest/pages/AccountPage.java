@@ -3,7 +3,8 @@ package ftm.mailclienttest.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import ftm.mailclienttest.screenshoter.Screenshoter;
+import ftm.mailclienttest.businessobjects.User;
+import ftm.mailclienttest.tools.Screenshoter;
 
 public class AccountPage extends AbstractPage{
 	private static final String ACCOUNT_PAGE_URL = "https://accounts.google.com";
@@ -24,18 +25,18 @@ public class AccountPage extends AbstractPage{
 		return driver.findElement(PASSWORD_FIELD_LOCATOR).getText();
 	}
 
-	public void fillInEmailField(String query) {
+	public void fillInEmailField(User user) {
 		highlightElement(EMAIL_FIELD_LOCATOR);
 		Screenshoter.takeScreenshot(driver);
-		driver.findElement(EMAIL_FIELD_LOCATOR).sendKeys(query);
+		driver.findElement(EMAIL_FIELD_LOCATOR).sendKeys(user.getLogin());
 		Screenshoter.takeScreenshot(driver);
 		unHighlightElement(EMAIL_FIELD_LOCATOR);
 	}
 	
-	public void fillInPasswordField(String query) {
+	public void fillInPasswordField(User user) {
 		highlightElement(PASSWORD_FIELD_LOCATOR);
 		Screenshoter.takeScreenshot(driver);
-		driver.findElement(PASSWORD_FIELD_LOCATOR).sendKeys(query);
+		driver.findElement(PASSWORD_FIELD_LOCATOR).sendKeys(user.getPassword());
 		Screenshoter.takeScreenshot(driver);
 		unHighlightElement(PASSWORD_FIELD_LOCATOR);
 	}

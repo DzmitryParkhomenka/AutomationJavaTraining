@@ -19,7 +19,7 @@ public class WebDriverSingleton {
 	}
 
 	private static WebDriver init() {
-		System.setProperty("webdriver.chrome.driver", "E:\\JAVA\\Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\JAVA\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

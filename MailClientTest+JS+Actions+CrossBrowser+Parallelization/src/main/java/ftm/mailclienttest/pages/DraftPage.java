@@ -3,7 +3,8 @@ package ftm.mailclienttest.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import ftm.mailclienttest.screenshoter.Screenshoter;
+import ftm.mailclienttest.tools.RefreshPage;
+import ftm.mailclienttest.tools.Screenshoter;
 
 public class DraftPage extends AbstractPage{
 	private static final String DRAFT_PAGE_URL = "https://mail.google.com/mail/u/0/#drafts";
@@ -17,6 +18,7 @@ public class DraftPage extends AbstractPage{
 	
 	public void openDraftURL() {
 		driver.get(DRAFT_PAGE_URL);
+		new RefreshPage(driver).refreshDraftPage();
 	}
 	
 	public String getTextFromTopic() {
@@ -30,22 +32,6 @@ public class DraftPage extends AbstractPage{
 		Screenshoter.takeScreenshot(driver);
 		driver.findElement(TOPIC_DRAFT_NOTIFICATION_LOCATOR).click();
 		return new EmailPopUp(driver);
-	}
-	
-	public void refreshDraftPage() {
-		driver.navigate().refresh();
-		if (checkAlert() == true) {
-			driver.switchTo().alert().accept();
-		}
-	}
-	
-	public boolean checkAlert() {
-		try {
-			driver.switchTo().alert();
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
 	}
 	
 	public void clickRefreshButton() {
@@ -63,5 +49,6 @@ public class DraftPage extends AbstractPage{
 		Screenshoter.takeScreenshot(driver);
 		unHighlightElement(SEND_EMAIL_BUTTON_LOCATOR);
 		driver.findElement(SEND_EMAIL_BUTTON_LOCATOR).click();
+		new RefreshPage(driver).refreshDraftPage();
 	}
 }

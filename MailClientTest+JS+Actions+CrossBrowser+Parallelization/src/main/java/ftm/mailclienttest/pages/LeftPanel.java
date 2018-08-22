@@ -3,7 +3,8 @@ package ftm.mailclienttest.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import ftm.mailclienttest.screenshoter.Screenshoter;
+import ftm.mailclienttest.tools.RefreshPage;
+import ftm.mailclienttest.tools.Screenshoter;
 
 public class LeftPanel extends AbstractPage{
 	private static final By SENT_BUTTON_LOCATOR = By.xpath("//a[@href='https://mail.google.com/mail/u/0/#sent']");
@@ -27,6 +28,7 @@ public class LeftPanel extends AbstractPage{
 		highlightElement(DRAFTS_BUTTON_LOCATOR);
 		Screenshoter.takeScreenshot(driver);
 		driver.findElement(DRAFTS_BUTTON_LOCATOR).click();
+		new RefreshPage(driver).refreshDraftPage();
 		return new DraftPage(driver);
 	}
 	

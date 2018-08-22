@@ -3,7 +3,7 @@ package ftm.mailclienttest.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import ftm.mailclienttest.screenshoter.Screenshoter;
+import ftm.mailclienttest.tools.Screenshoter;
 
 public class HomePage extends AbstractPage{
 	private static final String HOME_PAGE_URL = "https://www.google.com";

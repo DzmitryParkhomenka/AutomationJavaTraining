@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import ftm.mailclienttest.screenshoter.Screenshoter;
+import ftm.mailclienttest.tools.Screenshoter;
 
 public class SelectablePage extends ActionsPage {
 	public static final By FIRST_ITEM_LOCATOR = By.xpath("//li[1]");

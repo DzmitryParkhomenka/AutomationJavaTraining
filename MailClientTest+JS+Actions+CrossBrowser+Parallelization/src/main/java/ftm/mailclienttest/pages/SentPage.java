@@ -3,7 +3,7 @@ package ftm.mailclienttest.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import ftm.mailclienttest.screenshoter.Screenshoter;
+import ftm.mailclienttest.tools.Screenshoter;
 
 public class SentPage extends AbstractPage{
 	private static final String URL = "https://mail.google.com/mail/u/0/#sent";

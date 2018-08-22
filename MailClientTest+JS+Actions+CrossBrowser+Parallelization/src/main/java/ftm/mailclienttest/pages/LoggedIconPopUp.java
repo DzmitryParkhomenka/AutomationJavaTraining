@@ -3,7 +3,7 @@ package ftm.mailclienttest.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import ftm.mailclienttest.screenshoter.Screenshoter;
+import ftm.mailclienttest.tools.Screenshoter;
 
 public class LoggedIconPopUp extends AbstractPage{
 	private static final By EXIT_BUTTON_LOCTOR = By.xpath("//*[@id='gb_71']");

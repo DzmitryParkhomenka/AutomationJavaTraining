@@ -1,4 +1,4 @@
-package ftm.mailclienttest.pageobject;
+package ftm.mailclienttest.testscenarios;
 
 import java.net.MalformedURLException;
 
@@ -9,7 +9,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import ftm.mailclienttest.pages.MainPage;
-import ftm.mailclienttest.webdriverthread.Browser;
+import ftm.mailclienttest.webdriver.WebDriverInit;
 
 public class ActionsTest {
 	public static WebDriver driver;
@@ -17,7 +17,7 @@ public class ActionsTest {
 	@BeforeClass
 	@Parameters("browser")
 	public static void getBrowserName(String browser) throws MalformedURLException{
-		driver = Browser.getDriver(browser);
+		driver = WebDriverInit.getDriver(browser);
 	}
 	
     @Test(description = "Drag-n-drop test")
