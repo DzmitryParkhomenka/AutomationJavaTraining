@@ -9,8 +9,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import ftm.mailclienttest.businessobjects.Email;
 import ftm.mailclienttest.businessobjects.User;
-import ftm.mailclienttest.pages.*;
+import ftm.mailclienttest.emailtestpages.*;
+import ftm.mailclienttest.tools.Refresher;
 import ftm.mailclienttest.webdriver.WebDriverInit;
 
 public class MailClientTest {
@@ -35,60 +37,22 @@ public class MailClientTest {
 	}
 
 	@Test(priority = 2)
-	public void writeEmailToDrafts() {
-		String to = "dimos-eskimos@yandex.ru";
-		String subject = "Learn To Automate";
-		String text = "Getting some knowledge";
+	public void sendEmail() {
 		HomePage homePage = new HomePage(driver);
+		LeftPanel leftPanel = new LeftPanel(driver);
+		SentPage sentPage = new SentPage(driver);
 		homePage.clickEmailButton();
-		LeftPanel rightPanel = new LeftPanel(driver);
-		EmailPopUp emailPopUp = rightPanel.clickWriteEmailButton();
-		emailPopUp.fillInToField(to);
-		emailPopUp.fillInSubjectField(subject);
-		emailPopUp.fillInTextboxField(text);
-		emailPopUp.clickSaveCloseButton();
-		DraftPage draftPage = rightPanel.clickDraftsButton();
-		draftPage.openDraftURL();
-		Assert.assertEquals(draftPage.getTextFromTopic(), subject);
+		EmailPopUp emailPopUp = leftPanel.clickWriteEmailButton();
+		emailPopUp.fillInToField(new Email());
+		emailPopUp.fillInSubjectField(new Email());
+		emailPopUp.fillInTextboxField(new Email());
+		emailPopUp.clickSendButton();
+		sentPage.openPage();
+		new Refresher(driver).refreshPage();
+		Assert.assertEquals(sentPage.getTextFromEmailChain(), new Email().getSubject());
 	}
-
+	
 	@Test(priority = 3)
-	public void checkTopicInDrafts() {
-		DraftPage draftPage = new DraftPage(driver);
-		EmailPopUp emailPopUp = draftPage.clickTopicLink();
-		Assert.assertEquals(emailPopUp.getToFieldText(), "dimos-eskimos@yandex.ru");
-	}
-
-	@Test(priority = 4)
-	public void checksubjectInDrafts() {
-		EmailPopUp emailPopUp = new EmailPopUp(driver);
-		Assert.assertEquals(emailPopUp.getSubjectFieldText(), "Learn To Automate");
-	}
-
-	@Test(priority = 5)
-	public void checkTextboxInDrafts() {
-		EmailPopUp emailPopUp = new EmailPopUp(driver);
-		Assert.assertEquals(emailPopUp.getTextboxText(), "Getting some knowledge");
-	}
-
-	@Test(priority = 6)
-	public void sendEmailFromDrafts() {
-		LeftPanel rightPanel = new LeftPanel(driver);
-		DraftPage draftPage = new DraftPage(driver);
-		draftPage.clickSendEmailButton();
-		Assert.assertEquals(rightPanel.getDraftsLocatorText(), "Черновики");
-	}
-
-	@Test(priority = 7)
-	public void checkEmailIsSent() {
-		String subject = "Learn To Automate";
-		LeftPanel rightPanel = new LeftPanel(driver);
-		SentPage sentPage = rightPanel.clickSentButton();
-		sentPage.clickSentEmail();
-		Assert.assertEquals(sentPage.getTextFromEmailChain(), subject);
-	}
-
-	@Test(priority = 8)
 	public void logOutFromAccount() {
 		LoggedIconPopUp loggedIconPopUp = new LoggedIconPopUp(driver);
 		loggedIconPopUp.clickIconInsideEmail();
