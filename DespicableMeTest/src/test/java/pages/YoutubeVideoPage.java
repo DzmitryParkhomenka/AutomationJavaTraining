@@ -23,9 +23,10 @@ public class YoutubeVideoPage extends AbstractPage{
 	}
 	
 	public Long getTextFromCounter() {
-		String pattern = "(\\s)";
-		String pattern2 = "(\\,)";
-		String a = counterElement.getText().substring(0, 10).replaceAll(pattern, "").replaceAll(pattern2, "");
+		String findSpaceRegex = "(\\s)";
+		String findComaRegex = "(\\,)";
+		String empty = "";
+		String a = counterElement.getText().substring(0, 10).replaceAll(findSpaceRegex, empty).replaceAll(findComaRegex, empty);
 		return Long.parseLong(a);
 	}
 	
