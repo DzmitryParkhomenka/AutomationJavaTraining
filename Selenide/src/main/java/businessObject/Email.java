@@ -1,4 +1,4 @@
-package BusinessObject;
+package businessObject;
 
 public class Email {
 	private static final String TO = "dimos-eskimos@yandex.ru";

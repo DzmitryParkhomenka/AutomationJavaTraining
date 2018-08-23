@@ -1,4 +1,4 @@
-package BusinessObject;
+package businessObject;
 
 public class User {
 	private static final String LOGIN = "dimos.eskimos@gmail.com";

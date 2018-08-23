@@ -1,14 +1,14 @@
-package Learn;
+package tests;
 
 import org.testng.annotations.Test;
 
-import BusinessObject.Email;
-import BusinessObject.User;
-import Pages.AccountPage;
-import Pages.EmailPopUp;
-import Pages.HomePage;
-import Pages.LeftPanel;
-import Pages.LoggedIconPopUp;
+import businessObject.Email;
+import businessObject.User;
+import pages.AccountPage;
+import pages.EmailPopUp;
+import pages.HomePage;
+import pages.LeftPanel;
+import pages.LoggedIconPopUp;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.$;
