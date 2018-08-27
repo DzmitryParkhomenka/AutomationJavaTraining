@@ -2,11 +2,10 @@ package ftm.mailclienttest.tools;
 
 import org.openqa.selenium.WebDriver;
 
-import ftm.mailclienttest.abstractpage.AbstractPage;
-
-public class Refresher extends AbstractPage{	
+public class Refresher {	
+	protected WebDriver driver;
 	public Refresher(WebDriver driver) {
-		super(driver);
+		this.driver = driver;
 	}
 
 	public void refreshPage() {
