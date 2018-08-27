@@ -1,0 +1,7 @@
+.metadata
+.recommenders
+.settings
+.classpath
+.project
+/target/
+/test-output/

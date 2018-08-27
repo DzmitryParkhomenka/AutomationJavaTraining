@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parallel" parallel="methods" thread-count="2">
+	<test name="ParalleRun">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.SumLongTest"></class>
+			<class name="com.epam.cdp.calc.tests.SumDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.SubDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.SubLongTest"></class>
+			<class name="com.epam.cdp.calc.tests.MulDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.MulLongTest"></class>
+			<class name="com.epam.cdp.calc.tests.DivDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.DivLongTest"></class>
+			<class name="com.epam.cdp.calc.tests.PowDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.SqrtDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.CosDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.SinDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.TgDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.CtgDoubleTest"></class>
+			<class name="com.epam.cdp.calc.tests.IsNegativeLongTest"></class>
+			<class name="com.epam.cdp.calc.tests.IsPositiveLongTest"></class>
+		</classes>
+	</test>
+</suite>

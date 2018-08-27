@@ -1,0 +1,99 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Dzmitry's Suite">
+
+	<test name="SumLongTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.SumLongTest"></class>
+		</classes>
+	</test>
+
+	<test name="SumDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.SumDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="SubDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.SubDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="SubLongTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.SubLongTest"></class>
+		</classes>
+	</test>
+
+	<test name="MulDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.MulDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="MulLongTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.MulLongTest"></class>
+		</classes>
+	</test>
+
+	<test name="DivDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.DivDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="DivLongTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.DivLongTest"></class>
+		</classes>
+	</test>
+
+	<test name="PowDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.PowDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="SqrtDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.SqrtDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="CosDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.CosDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="SinDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.SinDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="TgDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.TgDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="CtgDoubleTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.CtgDoubleTest"></class>
+		</classes>
+	</test>
+
+	<test name="IsNegativeLongTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.IsNegativeLongTest"></class>
+		</classes>
+	</test>
+
+	<test name="IsPositiveLongTest">
+		<classes>
+			<class name="com.epam.cdp.calc.tests.IsPositiveLongTest"></class>
+		</classes>
+	</test>
+</suite>
