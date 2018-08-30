@@ -1,6 +1,8 @@
 package ftm.mailclienttest.emailtestpage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
 import ftm.mailclienttest.abstractpage.AbstractPage;
 
 public class HomePage extends AbstractPage{
@@ -9,8 +11,8 @@ public class HomePage extends AbstractPage{
 	private static final By ENTER_EMAIL_BUTTON_LOCATOR = By.xpath("//a[@target='_top']");
 	private static final By EMAIL_LOGGED_ICON_LOCATOR = By.xpath("//*[@id='gbw']/div/div/div[2]/div[4]/div[1]/a");
 	
-	public HomePage() {
-		super();
+	public HomePage(WebDriver driver) {
+		super(driver);
 	}
 	
 	public void openPage() {
@@ -20,7 +22,7 @@ public class HomePage extends AbstractPage{
 	public AccountPage clickEnterEmailButton() {
 		waitForElementVisible(ENTER_EMAIL_BUTTON_LOCATOR);
 		driver.findElement(ENTER_EMAIL_BUTTON_LOCATOR).click();
-		return new AccountPage();
+		return new AccountPage(driver);
 	}
 	
 	public void clickEmailButton() {
@@ -35,6 +37,6 @@ public class HomePage extends AbstractPage{
 	public LoggedIconPopUp clickEmailLoggedIcon() {
 		waitForElementVisible(EMAIL_LOGGED_ICON_LOCATOR);
 		driver.findElement(EMAIL_LOGGED_ICON_LOCATOR).click();
-		return new LoggedIconPopUp();
+		return new LoggedIconPopUp(driver);
 	}
 }

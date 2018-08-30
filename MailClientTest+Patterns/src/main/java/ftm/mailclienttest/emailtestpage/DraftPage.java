@@ -1,6 +1,8 @@
 package ftm.mailclienttest.emailtestpage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
 import ftm.mailclienttest.abstractpage.AbstractPage;
 import ftm.mailclienttest.util.Refresher;
 
@@ -10,14 +12,14 @@ public class DraftPage extends AbstractPage{
 	private static final By REFRESH_DRAFT_BUTTON_LOCATOR = By.xpath("//div[@data-tooltip='Обновить']");
 	private static final By SEND_EMAIL_BUTTON_LOCATOR = By.xpath("//div[@class='J-J5-Ji btA']");
 	
-	public DraftPage() {
-		super();
+	public DraftPage(WebDriver driver) {
+		super(driver);
 	}
 	
 	public void openDraftURL() {
 		driver.get(DRAFT_PAGE_URL);
 		waitForElementVisible(TOPIC_DRAFT_NOTIFICATION_LOCATOR);
-		new Refresher().refreshPage();
+		new Refresher().refreshPage(driver);
 	}
 	
 	public String getTextFromTopic() {
@@ -28,7 +30,7 @@ public class DraftPage extends AbstractPage{
 	public EmailPopUp clickTopicLink() {
 		waitForElementVisible(TOPIC_DRAFT_NOTIFICATION_LOCATOR);	
 		driver.findElement(TOPIC_DRAFT_NOTIFICATION_LOCATOR).click();
-		return new EmailPopUp();
+		return new EmailPopUp(driver);
 	}
 	
 	public void clickRefreshButton() {
@@ -40,6 +42,6 @@ public class DraftPage extends AbstractPage{
 	public void clickSendEmailButton() {
 		waitForElementVisible(SEND_EMAIL_BUTTON_LOCATOR);
 		driver.findElement(SEND_EMAIL_BUTTON_LOCATOR).click();
-		new Refresher().refreshPage();
+		new Refresher().refreshPage(driver);
 	}
 }

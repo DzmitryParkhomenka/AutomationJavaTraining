@@ -1,18 +1,18 @@
 package ftm.mailclienttest.util;
 
-import ftm.mailclienttest.webdriver.WebDriverSingleton;
+import org.openqa.selenium.WebDriver;
 
-public class Refresher {	
-	public void refreshPage() {
-		WebDriverSingleton.getWebDriverInstance().navigate().refresh();
-		if (checkAlert() == true) {
-			WebDriverSingleton.getWebDriverInstance().switchTo().alert().accept();
+public class Refresher {			
+	public void refreshPage(WebDriver driver) {
+		driver.navigate().refresh();
+		if (checkAlert(driver) == true) {
+			driver.switchTo().alert().accept();
 		}
 	}
 	
-	public boolean checkAlert() {
+	public boolean checkAlert(WebDriver driver) {
 		try {
-			WebDriverSingleton.getWebDriverInstance().switchTo().alert();
+			driver.switchTo().alert();
 			return true;
 		} catch (Exception e) {
 			return false;

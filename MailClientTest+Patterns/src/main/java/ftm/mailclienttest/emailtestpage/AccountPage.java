@@ -1,6 +1,8 @@
 package ftm.mailclienttest.emailtestpage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
 import ftm.mailclienttest.abstractpage.AbstractPage;
 import ftm.mailclienttest.businessobject.User;
 
@@ -11,8 +13,8 @@ public class AccountPage extends AbstractPage{
 	private static final By SUBMIT_EMAIL_BUTTON_LOCATOR = By.xpath("//div[@id='identifierNext']");
 	private static final By SUBMIT_PASSWORD_BUTTON_LOCATOR = By.xpath("//div[@id='passwordNext']");
 	
-	public AccountPage() {
-		super();
+	public AccountPage(WebDriver driver) {
+		super(driver);
 	}
 	
 	public void openPage() {

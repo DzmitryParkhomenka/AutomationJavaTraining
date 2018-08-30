@@ -1,7 +1,10 @@
 package ftm.mailclienttest.emailtestpage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
 import ftm.mailclienttest.abstractpage.AbstractPage;
+import ftm.mailclienttest.util.Refresher;
 
 public class SentPage extends AbstractPage{
 	private static final String URL = "https://mail.google.com/mail/u/0/#sent";
@@ -9,8 +12,8 @@ public class SentPage extends AbstractPage{
 	private static final By EMAIL_CHAIN_NAME_LOCATOR = By.xpath("(//*[@class='bog'])[1]/span");
 	
 	
-	public SentPage() {
-		super();
+	public SentPage(WebDriver driver) {
+		super(driver);
 	}
 	
 	public void openPage() {
@@ -18,7 +21,7 @@ public class SentPage extends AbstractPage{
 	}
 	
 	public void refreshDraftPage() {
-		driver.navigate().refresh();
+		new Refresher().refreshPage(driver);
 	}
 	
 	public void clickSentEmail() {

@@ -1,6 +1,8 @@
 package ftm.mailclienttest.emailtestpage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
 import ftm.mailclienttest.abstractpage.AbstractPage;
 import ftm.mailclienttest.businessobject.Email;
 
@@ -14,8 +16,8 @@ public class EmailPopUp extends AbstractPage{
 	private static final By SAVE_CLOSE_BUTTON_LOCATOR = By.xpath("//img[@alt='Закрыть']");
 	private static final By SENT_POP_UP_LOCATOR = By.xpath("//*[@id='link_vsm']");
 	
-	public EmailPopUp() {
-		super();
+	public EmailPopUp(WebDriver driver) {
+		super(driver);
 	}
 
 	public void fillInToField(Email email) {

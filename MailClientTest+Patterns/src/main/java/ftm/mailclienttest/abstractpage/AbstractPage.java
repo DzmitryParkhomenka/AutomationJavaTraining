@@ -5,14 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import ftm.mailclienttest.webdriver.WebDriverSingleton;
-
 public class AbstractPage {
 	protected WebDriver driver;
 	private static final int WAIT_FOR_ELEMENT_SECONDS = 10;
 
-	public AbstractPage() {
-		this.driver = WebDriverSingleton.getWebDriverInstance();
+	public AbstractPage(WebDriver driver) {
+		this.driver = driver;
 	}
 
 	public void waitForElementVisible(By locator) {
