@@ -17,31 +17,36 @@ public class AccountPage extends AbstractPage{
 		super(driver);
 	}
 	
-	public void openPage() {
+	public AccountPage openPage() {
 		driver.get(ACCOUNT_PAGE_URL);
+		return this;
 	}
 	
 	public String getTextFromPasswordField() {
 		return driver.findElement(PASSWORD_FIELD_LOCATOR).getText();
 	}
 
-	public void fillInEmailField(User user) {
+	public AccountPage fillInEmailField(User user) {
 		driver.findElement(EMAIL_FIELD_LOCATOR).sendKeys(user.getLogin());
+		return this;
 	}
 	
-	public void fillInPasswordField(User user) {
+	public AccountPage fillInPasswordField(User user) {
 		driver.findElement(PASSWORD_FIELD_LOCATOR).sendKeys(user.getPassword());
+		return this;
 	}
 	
-	public void clickSubmitEmailButton() {
+	public AccountPage clickSubmitEmailButton() {
 		waitForElementVisible(SUBMIT_EMAIL_BUTTON_LOCATOR);
 		driver.findElement(SUBMIT_EMAIL_BUTTON_LOCATOR).click();
 		waitForElementVisible(PASSWORD_FIELD_LOCATOR);
+		return this;
 	}
 	
-	public void clickSubmitPasswordButton(HomePage homePage) {
+	public AccountPage clickSubmitPasswordButton(HomePage homePage) {
 		waitForElementVisible(SUBMIT_PASSWORD_BUTTON_LOCATOR);
 		driver.findElement(SUBMIT_PASSWORD_BUTTON_LOCATOR).click();
 		waitForElementVisible(homePage.getEmailLoggedIcon());
+		return this;
 	}
 }

@@ -13,13 +13,15 @@ public class LoggedIconPopUp extends AbstractPage{
 		super(driver);
 	}
 	
-	public void clickIconInsideEmail() {
+	public LoggedIconPopUp clickIconInsideEmail() {
 		waitForElementVisible(EMAIL_LOGGED_ICON_INSIDE_EMAIL_LOCATOR);
 		driver.findElement(EMAIL_LOGGED_ICON_INSIDE_EMAIL_LOCATOR).click();
+		return this;
 	}
 	
-	public void clickExitButton() {
+	public AccountPage clickExitButton() {
 		waitForElementVisible(EXIT_BUTTON_LOCTOR);
 		driver.findElement(EXIT_BUTTON_LOCTOR).click();
+		return new AccountPage(driver);
 	}
 }

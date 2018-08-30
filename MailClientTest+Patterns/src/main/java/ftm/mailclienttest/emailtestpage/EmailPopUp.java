@@ -20,30 +20,35 @@ public class EmailPopUp extends AbstractPage{
 		super(driver);
 	}
 
-	public void fillInToField(Email email) {
+	public EmailPopUp fillInToField(Email email) {
 		waitForElementVisible(TO_FIELD_LOCATOR);
 		driver.findElement(TO_FIELD_LOCATOR).sendKeys(email.getTo());
+		return this;
 	}
 	
-	public void fillInSubjectField(Email email) {
+	public EmailPopUp fillInSubjectField(Email email) {
 		waitForElementVisible(SUBJECT_FIELD_LOCATOR);
 		driver.findElement(SUBJECT_FIELD_LOCATOR).sendKeys(email.getSubject());
+		return this;
 	}
 	
-	public void fillInTextboxField(Email email) {
+	public EmailPopUp fillInTextboxField(Email email) {
 		waitForElementVisible(TEXTBOX_FIELD_LOCATOR);
 		driver.findElement(TEXTBOX_FIELD_LOCATOR).sendKeys(email.getText());
+		return this;
 	}
 	
-	public void clickSendButton() {
+	public SentPage clickSendButton() {
 		waitForElementVisible(SEND_BUTTON_LOCATOR);
 		driver.findElement(SEND_BUTTON_LOCATOR).click();
 		waitForElementVisible(SENT_POP_UP_LOCATOR);
+		return new SentPage(driver);
 	}
 	
-	public void clickSaveCloseButton() {
+	public EmailPopUp clickSaveCloseButton() {
 		waitForElementVisible(SAVE_CLOSE_BUTTON_LOCATOR);
 		driver.findElement(SAVE_CLOSE_BUTTON_LOCATOR).click();
+		return this;
 	}
 
 	public String getToFieldText() {

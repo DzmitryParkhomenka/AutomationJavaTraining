@@ -15,8 +15,9 @@ public class HomePage extends AbstractPage{
 		super(driver);
 	}
 	
-	public void openPage() {
+	public HomePage openPage() {
 		driver.get(HOME_PAGE_URL);
+		return this;
 	}
 		
 	public AccountPage clickEnterEmailButton() {
@@ -25,9 +26,10 @@ public class HomePage extends AbstractPage{
 		return new AccountPage(driver);
 	}
 	
-	public void clickEmailButton() {
+	public LeftPanel clickEmailButton() {
 		waitForElementVisible(EMAIL_BUTTON_LOCATOR);
 		driver.findElement(EMAIL_BUTTON_LOCATOR).click();
+		return new LeftPanel(driver);
 	}
 	
 	public By getEmailLoggedIcon() {
