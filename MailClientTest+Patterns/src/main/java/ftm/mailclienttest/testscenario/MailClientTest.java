@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 import ftm.mailclienttest.businessobject.*;
 import ftm.mailclienttest.emailtestpage.*;
+import ftm.mailclienttest.factory.DriverFactory;
 import ftm.mailclienttest.util.Refresher;
-import ftm.mailclienttest.webdriver.DriverFactory;
 
 public class MailClientTest {
 	private static WebDriver driver;
