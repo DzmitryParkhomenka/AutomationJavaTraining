@@ -2,7 +2,6 @@ package page;
 
 import org.openqa.selenium.By;
 import abstractpage.AbstractPage;
-import businessobject.Email;
 
 public class EmailPopUp extends AbstractPage{
 	private static final By TO_FIELD_LOCATOR = By.xpath("//textarea[@name='to']");
@@ -18,21 +17,21 @@ public class EmailPopUp extends AbstractPage{
 		super();
 	}
 
-	public EmailPopUp fillInToField(Email email) {
+	public EmailPopUp fillInToField(String toField) {
 		waitForElementVisible(TO_FIELD_LOCATOR);
-		driver.findElement(TO_FIELD_LOCATOR).sendKeys(email.getTo());
+		driver.findElement(TO_FIELD_LOCATOR).sendKeys(toField);
 		return this;
 	}
 	
-	public EmailPopUp fillInSubjectField(Email email) {
+	public EmailPopUp fillInSubjectField(String subjectField) {
 		waitForElementVisible(SUBJECT_FIELD_LOCATOR);
-		driver.findElement(SUBJECT_FIELD_LOCATOR).sendKeys(email.getSubject());
+		driver.findElement(SUBJECT_FIELD_LOCATOR).sendKeys(subjectField);
 		return this;
 	}
 	
-	public EmailPopUp fillInTextboxField(Email email) {
+	public EmailPopUp fillInTextboxField(String textboxField) {
 		waitForElementVisible(TEXTBOX_FIELD_LOCATOR);
-		driver.findElement(TEXTBOX_FIELD_LOCATOR).sendKeys(email.getText());
+		driver.findElement(TEXTBOX_FIELD_LOCATOR).sendKeys(textboxField);
 		return this;
 	}
 	

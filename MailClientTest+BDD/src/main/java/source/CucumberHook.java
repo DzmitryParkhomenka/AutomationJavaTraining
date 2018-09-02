@@ -1,4 +1,4 @@
-package service;
+package source;
 
 import cucumber.api.java.After;
 import webdriver.WebDriverSingleton;

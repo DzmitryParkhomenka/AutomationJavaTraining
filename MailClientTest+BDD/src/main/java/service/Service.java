@@ -2,7 +2,6 @@ package service;
 
 import org.testng.Assert;
 
-import businessobject.Email;
 import businessobject.User;
 import cucumber.api.java.en.Given;
 import page.AccountPage;
@@ -41,9 +40,9 @@ public class Service {
 		return emailPopUp;
 	}
 	
-	@Given("I filled in email fields and sent email")
-	public static void fillInAllFieldsAndSendEmail() {
-		new EmailPopUp().fillInToField(new Email()).fillInSubjectField(new Email()).fillInTextboxField(new Email()).clickSendButton();
+	@Given("I filled in ([^\"]) field, ([^\"]) field, ([^\"]) field and sent email")
+	public static void fillInAllFieldsAndSendEmail(String to, String subject, String textbox) {
+		new EmailPopUp().fillInToField(to).fillInSubjectField(subject).fillInTextboxField(textbox).clickSendButton();
 	}
 	
 	@Given("I opened Sent Page to check that email was sent")
@@ -54,8 +53,8 @@ public class Service {
 	}
 	
 	@Given("I checked that email was sent")
-	public static void checkThatEmailWasSent() {
-		Assert.assertEquals(new SentPage().getTextFromEmailChain(), new Email().getSubject());
+	public static void checkThatEmailWasSent(String subject) {
+		Assert.assertEquals(new SentPage().getTextFromEmailChain(), subject);
 	}
 	
 	@Given("I logged out from Google Account")

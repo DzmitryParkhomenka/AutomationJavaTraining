@@ -18,9 +18,9 @@ public class MailClientTest {
 	@Test(priority = 2)
 	public void sendEmail() {
 		Service.openEmailPopUp();
-		Service.fillInAllFieldsAndSendEmail();
+		Service.fillInAllFieldsAndSendEmail("", "", "");
 		Service.openSentPage();
-		Service.checkThatEmailWasSent();
+		Service.checkThatEmailWasSent("");
 	}
 	
 	@Test(priority = 3)
