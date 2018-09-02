@@ -7,9 +7,9 @@ Feature: Login to Google Email Account
     And I fill in login and password fields
     Then I checked that login was successfull
     Given I opened dialog to send email
-    And I filled in <To> field, <Subject> field, <Textbox> field and sent email
+    And I filled in "<To>" field, "<Subject>" field, "<Textbox>" field and sent Email
     And I opened Sent Page to check that email was sent
-    Then I checked that email was sent
+    Then I checked that email was sent and has correct "<Subject>"
     Given I logged out from Google Account
     Then I checked that logout was succesfull
 

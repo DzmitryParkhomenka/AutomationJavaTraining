@@ -3,7 +3,9 @@ package service;
 import org.testng.Assert;
 
 import businessobject.User;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import page.AccountPage;
 import page.EmailPopUp;
 import page.HomePage;
@@ -20,7 +22,7 @@ public class Service {
 		return accountPage;
 	}
 	
-	@Given("I fill in login and password fields")
+	@And("I fill in login and password fields")
 	public static AccountPage loginToGoogleAccount() {
 		HomePage homePage = new HomePage();
 		AccountPage accountPage = new AccountPage();
@@ -28,7 +30,7 @@ public class Service {
 		return accountPage;
 	}
 	
-	@Given("I checked that login was successfull")
+	@Then("I checked that login was successfull")
 	public static void checkLoginIsSuccessfull() {
 		HomePage homePage = new HomePage(); 
 		Assert.assertTrue(WebDriverSingleton.getWebDriverInstance().findElement(homePage.getEmailLoggedIcon()).isDisplayed(), "Logged icon is not displayed");
@@ -40,19 +42,19 @@ public class Service {
 		return emailPopUp;
 	}
 	
-	@Given("I filled in ([^\"]) field, ([^\"]) field, ([^\"]) field and sent email")
+	@And("^I filled in \"([^\"]*)\" field, \"([^\"]*)\" field, \"([^\"]*)\" field and sent Email$")
 	public static void fillInAllFieldsAndSendEmail(String to, String subject, String textbox) {
 		new EmailPopUp().fillInToField(to).fillInSubjectField(subject).fillInTextboxField(textbox).clickSendButton();
 	}
-	
-	@Given("I opened Sent Page to check that email was sent")
+		
+	@And("I opened Sent Page to check that email was sent")
 	public static void openSentPage() {
 		SentPage sentPage = new SentPage();
 		sentPage.openPage();
 		new Refresher().refreshPage();
 	}
 	
-	@Given("I checked that email was sent")
+	@Then("^I checked that email was sent and has correct \"([^\"]*)\"$")
 	public static void checkThatEmailWasSent(String subject) {
 		Assert.assertEquals(new SentPage().getTextFromEmailChain(), subject);
 	}
@@ -62,7 +64,7 @@ public class Service {
 		new LoggedIconPopUp().clickIconInsideEmail().clickExitButton();
 	}
 	
-	@Given("I checked that logout was succesfull")
+	@Then("I checked that logout was succesfull")
 	public static void checkThatLogoutWasSuccessfull() {
 		Assert.assertEquals(new AccountPage().getTextFromPasswordField(), "");
 	}

@@ -21,6 +21,7 @@ public class AccountPage extends AbstractPage{
 	}
 	
 	public String getTextFromPasswordField() {
+		waitForElementVisible(PASSWORD_FIELD_LOCATOR);
 		return driver.findElement(PASSWORD_FIELD_LOCATOR).getText();
 	}
 
