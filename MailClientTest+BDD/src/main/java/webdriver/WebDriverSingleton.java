@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import util.Refresher;
-
 public class WebDriverSingleton {
 	private static WebDriver driver;
 	
