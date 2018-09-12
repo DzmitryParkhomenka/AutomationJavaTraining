@@ -1,14 +1,14 @@
 package Finger.Training.BO;
 
 public class User {
-	private static final String login = "";
-	private static final String password = "";
+	private static final String login = "dimos.eskimos@gmail.com";
+	private static final String password = "Jkmrfghbdtn36";
 	
-	public String getLogin() {
+	public static String getLogin() {
 		return login;
 	}
 	
-	public String getPassword() {
+	public static String getPassword() {
 		return password;
 	}
 }

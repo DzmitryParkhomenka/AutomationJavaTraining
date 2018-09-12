@@ -15,7 +15,7 @@ public class AbstractPage {
 		this.driver = WebDriverSingleton.getDriverInstance();
 	}
 	
-	public void waitForElemntsToBeVisible(By locator) {
+	public void waitForElementsToBeVisible(By locator) {
 		new WebDriverWait(driver, WAIT_SECONDS).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 	}
 }
