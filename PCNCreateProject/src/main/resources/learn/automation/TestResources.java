@@ -15,10 +15,10 @@ public class TestResources {
 	protected static WebDriverWait wait;
 	protected static ChromeOptions options;
 	protected static Actions actions;
-	protected static String customerCodeName = "ErrorPCN";
+	protected static String customerCodeName = "TestPCN";
 
 	public static void setUp() {
-		System.setProperty("webdriver.chrome.driver", "E:\\Java\\Java basics\\Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\Java\\Drivers\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("start-maximized");
 		driver = new ChromeDriver(options);

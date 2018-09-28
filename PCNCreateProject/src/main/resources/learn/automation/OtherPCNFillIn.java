@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class OtherPCNFillIn {
 	
 	public static void fillInOtherPCN(WebDriver driver, WebDriverWait wait, Actions actions, String customerCodeName, int a, int b) throws InterruptedException {
-		for (int i = 2; i < 11; i++) {	
+		for (int i = 2; i < 7; i++) {	
 			WebElement newCustomerRButton = driver.findElement(By.xpath("//input[@name='customer'][@value='new']"));
 			newCustomerRButton.isSelected();
 				
@@ -23,14 +23,14 @@ public class OtherPCNFillIn {
 			customerName.sendKeys(customerCodeName + i);
 			Thread.sleep(a);
 			
-			WebElement dropdownButton1 = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-285 MuiSelect-selectMenu-286 MuiInput-input-278'])[1]"));
+			WebElement dropdownButton1 = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-286 MuiSelect-selectMenu-287 MuiInput-input-279'])[1]"));
 			jsMethods.jsClick(dropdownButton1);
 			
 			WebElement chooseStatus = driver.findElement(By.xpath("(//li[@role='option'])[2]"));
 			jsMethods.jsClick(chooseStatus);
 			Thread.sleep(a);
 			
-			WebElement dropdownButton2 = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-285 MuiSelect-selectMenu-286 MuiInput-input-278'])[2]"));
+			WebElement dropdownButton2 = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-286 MuiSelect-selectMenu-287 MuiInput-input-279'])[2]"));
 			jsMethods.jsClick(dropdownButton2);
 			Thread.sleep(a);
 			
@@ -38,7 +38,7 @@ public class OtherPCNFillIn {
 			jsMethods.jsClick(chooseCustomerType);
 			Thread.sleep(a);
 			
-			WebElement dropdownButton3 = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-285 MuiSelect-selectMenu-286 MuiInput-input-278'])[3]"));
+			WebElement dropdownButton3 = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-286 MuiSelect-selectMenu-287 MuiInput-input-279'])[3]"));
 			jsMethods.jsClick(dropdownButton3);
 			Thread.sleep(a);
 			
@@ -56,7 +56,7 @@ public class OtherPCNFillIn {
 			currencyField.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
 			Thread.sleep(a);
 			
-			WebElement cultureField = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-285 MuiSelect-selectMenu-286 MuiInput-input-278'])[4]"));
+			WebElement cultureField = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-286 MuiSelect-selectMenu-287 MuiInput-input-279'])[4]"));
 			jsMethods.jsClick(cultureField);
 			Thread.sleep(a);
 			
@@ -64,7 +64,7 @@ public class OtherPCNFillIn {
 			jsMethods.jsClick(chooseCulture);
 			Thread.sleep(a);
 			
-			WebElement timezoneField = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-285 MuiSelect-selectMenu-286 MuiInput-input-278'])[5]"));
+			WebElement timezoneField = driver.findElement(By.xpath("(//div[@class='MuiSelect-select-286 MuiSelect-selectMenu-287 MuiInput-input-279'])[5]"));
 			jsMethods.jsClick(timezoneField);
 			Thread.sleep(a);
 			
@@ -83,7 +83,7 @@ public class OtherPCNFillIn {
 			sourcePCNField.sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
 			Thread.sleep(a);
 			
-			WebElement addOneMorePCN = driver.findElement(By.xpath("//button[@class='MuiButtonBase-root-59 MuiButton-root-120 MuiButton-raised-125 MuiButton-fab-130 MuiButton-raisedSecondary-128 t-addButton-228']"));
+			WebElement addOneMorePCN = driver.findElement(By.xpath("//button[@class='MuiButtonBase-root-59 MuiButton-root-121 MuiButton-raised-126 MuiButton-fab-131 MuiButton-raisedSecondary-129 t-addButton-229']"));
 			jsMethods.jsClick(addOneMorePCN);
 			Thread.sleep(a);
 		}
