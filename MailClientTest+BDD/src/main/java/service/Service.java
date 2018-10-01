@@ -15,7 +15,7 @@ import util.Refresher;
 import webdriver.WebDriverSingleton;
 
 public class Service {
-	@Given("I opened Google page")
+	@Given("I open Google page")
 	public static AccountPage openHomePage() {
 		HomePage homePage = new HomePage().openPage();
 		AccountPage accountPage = homePage.clickEnterEmailButton();
@@ -30,41 +30,41 @@ public class Service {
 		return accountPage;
 	}
 	
-	@Then("I checked that login was successfull")
+	@Then("I check that login was successfull")
 	public static void checkLoginIsSuccessfull() {
 		HomePage homePage = new HomePage(); 
 		Assert.assertTrue(WebDriverSingleton.getWebDriverInstance().findElement(homePage.getEmailLoggedIcon()).isDisplayed(), "Logged icon is not displayed");
 	}
 	
-	@Given("I opened dialog to send email")
+	@Given("I open dialog to send email")
 	public static EmailPopUp openEmailPopUp() {
 		EmailPopUp emailPopUp = new HomePage().clickEmailButton().clickWriteEmailButton();
 		return emailPopUp;
 	}
 	
-	@And("^I filled in \"([^\"]*)\" field, \"([^\"]*)\" field, \"([^\"]*)\" field and sent Email$")
+	@And("^I fill in \"([^\"]*)\" field, \"([^\"]*)\" field, \"([^\"]*)\" field and sent Email$")
 	public static void fillInAllFieldsAndSendEmail(String to, String subject, String textbox) {
 		new EmailPopUp().fillInToField(to).fillInSubjectField(subject).fillInTextboxField(textbox).clickSendButton();
 	}
 		
-	@And("I opened Sent Page to check that email was sent")
+	@And("I open Sent Page to check that email was sent")
 	public static void openSentPage() {
 		SentPage sentPage = new SentPage();
 		sentPage.openPage();
 		new Refresher().refreshPage();
 	}
 	
-	@Then("^I checked that email was sent and has correct \"([^\"]*)\"$")
+	@Then("^I check that email was sent and has correct \"([^\"]*)\"$")
 	public static void checkThatEmailWasSent(String subject) {
 		Assert.assertEquals(new SentPage().getTextFromEmailChain(), subject);
 	}
 	
-	@Given("I logged out from Google Account")
+	@Given("I log out from Google Account")
 	public static void logOutFromEmailAccout() {
 		new LoggedIconPopUp().clickIconInsideEmail().clickExitButton();
 	}
 	
-	@Then("I checked that logout was succesfull")
+	@Then("I check that logout was succesfull")
 	public static void checkThatLogoutWasSuccessfull() {
 		Assert.assertEquals(new AccountPage().getTextFromPasswordField(), "");
 	}

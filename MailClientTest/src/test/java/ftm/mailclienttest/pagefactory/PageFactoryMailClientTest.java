@@ -20,7 +20,7 @@ public class PageFactoryMailClientTest {
 	
 	@BeforeClass(description = "Start Browser")
 	private void initBrowser() {
-		System.setProperty("webdriver.chrome.driver", "E:\\Java\\Java basics\\Drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\Java\\Drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

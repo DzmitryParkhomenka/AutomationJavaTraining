@@ -1,17 +1,17 @@
 Feature: Login to Google Email Account
 
   Background: 
-    Given I opened Google page
+    Given I open Google page
 
   Scenario Outline: Login to my Google Account and check that login was successful
     And I fill in login and password fields
-    Then I checked that login was successfull
-    Given I opened dialog to send email
-    And I filled in "<To>" field, "<Subject>" field, "<Textbox>" field and sent Email
-    And I opened Sent Page to check that email was sent
-    Then I checked that email was sent and has correct "<Subject>"
-    Given I logged out from Google Account
-    Then I checked that logout was succesfull
+    Then I check that login was successfull
+    Given I open dialog to send email
+    And I fill in "<To>" field, "<Subject>" field, "<Textbox>" field and sent Email
+    And I open Sent Page to check that email was sent
+    Then I check that email was sent and has correct "<Subject>"
+    Given I log out from Google Account
+    Then I check that logout was succesfull
 
     Examples: 
       | To                      | Subject    | Textbox      |
