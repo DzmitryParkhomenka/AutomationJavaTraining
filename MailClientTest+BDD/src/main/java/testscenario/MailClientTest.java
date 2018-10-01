@@ -3,6 +3,7 @@ package testscenario;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
+import businessobject.Email;
 import service.Service;
 import webdriver.WebDriverSingleton;
 
@@ -18,9 +19,9 @@ public class MailClientTest {
 	@Test(priority = 2)
 	public void sendEmail() {
 		Service.openEmailPopUp();
-		Service.fillInAllFieldsAndSendEmail("", "", "");
+		Service.fillInAllFieldsAndSendEmail(Email.getTo(), Email.getSubject(), Email.getText());
 		Service.openSentPage();
-		Service.checkThatEmailWasSent("");
+		Service.checkThatEmailWasSent(Email.getSubject());
 	}
 	
 	@Test(priority = 3)

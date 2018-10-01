@@ -5,15 +5,15 @@ public class Email {
 	private static final String SUBJECT = "Learn To Automate";
 	private static final String TEXT = "Getting some knowledge";
 	
-	public String getTo() {
+	public static String getTo() {
 		return TO;
 	}
 	
-	public String getSubject() {
+	public static String getSubject() {
 		return SUBJECT;
 	}
 	
-	public String getText() {
+	public static String getText() {
 		return TEXT;
 	}
 }
