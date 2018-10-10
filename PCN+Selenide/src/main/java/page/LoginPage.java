@@ -15,22 +15,32 @@ public class LoginPage {
 	private static final By NO_BUTTON = By.xpath("//input[@id='idBtn_Back']");
 
 	public static void inputEmailIntoField() {
-		$(LOGIN_FIELD).shouldBe(visible).sendKeys(User.getEmail());
+		if ($(LOGIN_FIELD).is(visible)) {
+			$(LOGIN_FIELD).sendKeys(User.getEmail());
+		}
 	}
 
 	public static void inputPasswordIntoField() {
-		$(PASSWORD_FIELD).shouldBe(visible).sendKeys(User.getPassword());
+		if ($(PASSWORD_FIELD).is(visible)) {
+			$(PASSWORD_FIELD).sendKeys(User.getPassword());
+		}
 	}
-	
+
 	public static void clickNextButton() {
-		$(NEXT_BUTTON).shouldBe(visible).click();
+		if ($(NEXT_BUTTON).is(visible)) {
+			$(NEXT_BUTTON).click();
+		}
 	}
-	
+
 	public static void clickSubmitButton() {
-		$(SUBMIT_BUTTON).shouldBe(visible).click();
+		if ($(SUBMIT_BUTTON).is(visible)) {
+			$(SUBMIT_BUTTON).click();
+		}
 	}
-	
+
 	public static void clickNoButton() {
-		$(NO_BUTTON).shouldBe(visible).click();
+		if ($(NO_BUTTON).is(visible)) {
+			$(NO_BUTTON).click();
+		}
 	}
 }

@@ -2,7 +2,7 @@ package service;
 
 import module.CustomerDetails;
 
-public class FillInCustomerDetails {
+public class FillCustomerDetails {
 	public static void fillCustomerDetails() {
 		CustomerDetails.chooseNewCustomer();
 		CustomerDetails.fillCustomerCodeField();
