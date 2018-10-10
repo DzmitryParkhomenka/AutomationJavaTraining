@@ -1,8 +1,7 @@
 package page;
 
 import org.openqa.selenium.By;
-
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+import org.openqa.selenium.NoSuchElementException;
 
 import bo.User;
 
@@ -19,7 +18,7 @@ public class LoginPage {
 	public static void inputEmailIntoField() {
 		try {
 			$(LOGIN_FIELD).shouldBe(visible).sendKeys(User.getEmail());
-		} catch (ElementNotFoundException e) {
+		} catch (NoSuchElementException e) {
 
 		}
 	}
@@ -27,7 +26,7 @@ public class LoginPage {
 	public static void inputPasswordIntoField() {
 		try {
 			$(PASSWORD_FIELD).shouldBe(visible).sendKeys(User.getPassword());
-		} catch (ElementNotFoundException e) {
+		} catch (NoSuchElementException e) {
 
 		}
 	}
@@ -35,7 +34,7 @@ public class LoginPage {
 	public static void clickNextButton() {
 		try {
 			$(NEXT_BUTTON).shouldBe(visible).click();
-		} catch (ElementNotFoundException e) {
+		} catch (NoSuchElementException e) {
 
 		}
 	}
@@ -43,7 +42,7 @@ public class LoginPage {
 	public static void clickSubmitButton() {
 		try {
 			$(SUBMIT_BUTTON).shouldBe(visible).click();
-		} catch (ElementNotFoundException e) {
+		} catch (NoSuchElementException e) {
 
 		}
 	}
@@ -51,7 +50,7 @@ public class LoginPage {
 	public static void clickNoButton() {
 		try {
 			$(NO_BUTTON).shouldBe(visible).click();
-		} catch (ElementNotFoundException e) {
+		} catch (NoSuchElementException e) {
 
 		}
 	}
