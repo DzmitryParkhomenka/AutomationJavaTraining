@@ -2,6 +2,8 @@ package page;
 
 import org.openqa.selenium.By;
 
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+
 import bo.User;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -15,32 +17,42 @@ public class LoginPage {
 	private static final By NO_BUTTON = By.xpath("//input[@id='idBtn_Back']");
 
 	public static void inputEmailIntoField() {
-		if ($(LOGIN_FIELD).isDisplayed()) {
-			$(LOGIN_FIELD).sendKeys(User.getEmail());
+		try {
+			$(LOGIN_FIELD).shouldBe(visible).sendKeys(User.getEmail());
+		} catch (ElementNotFoundException e) {
+
 		}
 	}
 
 	public static void inputPasswordIntoField() {
-		if ($(PASSWORD_FIELD).isDisplayed()) {
-			$(PASSWORD_FIELD).sendKeys(User.getPassword());
+		try {
+			$(PASSWORD_FIELD).shouldBe(visible).sendKeys(User.getPassword());
+		} catch (ElementNotFoundException e) {
+
 		}
 	}
 
 	public static void clickNextButton() {
-		if ($(NEXT_BUTTON).isDisplayed()) {
-			$(NEXT_BUTTON).click();
+		try {
+			$(NEXT_BUTTON).shouldBe(visible).click();
+		} catch (ElementNotFoundException e) {
+
 		}
 	}
 
 	public static void clickSubmitButton() {
-		if ($(SUBMIT_BUTTON).isDisplayed()) {
-			$(SUBMIT_BUTTON).click();
+		try {
+			$(SUBMIT_BUTTON).shouldBe(visible).click();
+		} catch (ElementNotFoundException e) {
+
 		}
 	}
 
 	public static void clickNoButton() {
-		if ($(NO_BUTTON).isDisplayed()) {
-			$(NO_BUTTON).click();
+		try {
+			$(NO_BUTTON).shouldBe(visible).click();
+		} catch (ElementNotFoundException e) {
+
 		}
 	}
 }
