@@ -2,8 +2,8 @@ package service;
 
 import module.CustomerDetails;
 
-public class FillInCustomerDetails {
-	public static void fillCustomerDetails() {
+public class FillCustomerDetails {
+	public static void fill() {
 		CustomerDetails.chooseNewCustomer();
 		CustomerDetails.fillCustomerCodeField();
 		CustomerDetails.fillCustomerNameField();

@@ -3,7 +3,7 @@ package test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import service.FillInCustomerDetails;
+import service.FillCustomerDetails;
 import service.Login;
 import service.SetUp;
 
@@ -17,6 +17,6 @@ public class PCNCreateTest {
 		
 	@Test
 	public static void openPCNPage() {
-		FillInCustomerDetails.fillCustomerDetails();
+		FillCustomerDetails.fill();
 	}
 }
