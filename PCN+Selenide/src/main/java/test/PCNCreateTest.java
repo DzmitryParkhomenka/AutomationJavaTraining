@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import service.FillCustomerDetails;
 import service.FillCustomerGroup;
+import service.FillPlexCustomerDetails;
 import service.Login;
 import service.SetUp;
 
@@ -18,8 +19,9 @@ public class PCNCreateTest {
 		
 	@Test
 	public static void openPCNPage() {
-		FillCustomerDetails.fillCustomerDetails();
-		FillCustomerGroup.fillCustomerGroup();
+		//FillCustomerDetails.fillCustomerDetails();
+		//FillCustomerGroup.fillCustomerGroup();
+		FillPlexCustomerDetails.fillPlexCustomerDetails();
 	}
 
 }

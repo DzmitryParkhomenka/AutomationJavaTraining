@@ -14,10 +14,8 @@ public class CustomerDetails {
 	private static final By CUSTOMER_CODE_FIELD = By.xpath("//input[@placeholder='Type Customer Code']");
 	private static final By CUSTOMER_NAME_FIELD = By.xpath("//input[@placeholder='Type Customer Name']");
 	private static final By DROPDOWN = By.xpath("//li[@role='option']");
-	private static final By STATUS_BUTTON = By
-			.xpath("//input[@name='customerStatus']/preceding-sibling::*");
-	private static final By REGION_BUTTON = By
-			.xpath("//input[@name='regionKey']/preceding-sibling::*");
+	private static final By STATUS_BUTTON = By.xpath("//input[@name='customerStatus']/preceding-sibling::*");
+	private static final By REGION_BUTTON = By.xpath("//input[@name='regionKey']/preceding-sibling::*");
 
 	public static void chooseNewCustomer() {
 		if (!$(NEW_CUSTOMER_RADIO_BUTTON).isSelected()) {
@@ -41,10 +39,12 @@ public class CustomerDetails {
 
 	public static void clickStatusButton() {
 		$(STATUS_BUTTON).shouldBe(visible).click();
+		fillDropdown();
 	}
 
 	public static void clickRegionButton() {
 		$(REGION_BUTTON).shouldBe(visible).click();
+		fillDropdown();
 	}
 
 	public static void fillDropdown() {
