@@ -1,8 +1,7 @@
 package page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-
+import com.codeborne.selenide.ex.ElementNotFound;
 import bo.User;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -18,23 +17,25 @@ public class LoginPage {
 	public static void inputEmailIntoField() {
 		try {
 			$(LOGIN_FIELD).shouldBe(visible).sendKeys(User.getEmail());
-		} catch (NoSuchElementException e) {
+		} catch (ElementNotFound e) {
 
 		}
+		clickNextButton();
 	}
 
 	public static void inputPasswordIntoField() {
 		try {
 			$(PASSWORD_FIELD).shouldBe(visible).sendKeys(User.getPassword());
-		} catch (NoSuchElementException e) {
-
+		} catch (ElementNotFound e) {
+			
 		}
+		clickSubmitButton();
 	}
 
 	public static void clickNextButton() {
 		try {
 			$(NEXT_BUTTON).shouldBe(visible).click();
-		} catch (NoSuchElementException e) {
+		} catch (ElementNotFound e) {
 
 		}
 	}
@@ -42,7 +43,7 @@ public class LoginPage {
 	public static void clickSubmitButton() {
 		try {
 			$(SUBMIT_BUTTON).shouldBe(visible).click();
-		} catch (NoSuchElementException e) {
+		} catch (ElementNotFound e) {
 
 		}
 	}
@@ -50,7 +51,7 @@ public class LoginPage {
 	public static void clickNoButton() {
 		try {
 			$(NO_BUTTON).shouldBe(visible).click();
-		} catch (NoSuchElementException e) {
+		} catch (ElementNotFound e) {
 
 		}
 	}

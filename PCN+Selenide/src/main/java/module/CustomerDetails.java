@@ -49,6 +49,6 @@ public class CustomerDetails {
 
 	public static void fillDropdown() {
 		List<SelenideElement> dropdownElements = $$(DROPDOWN);
-		dropdownElements.get(5).click();
+		dropdownElements.get(5).shouldBe(visible).click();
 	}
 }
