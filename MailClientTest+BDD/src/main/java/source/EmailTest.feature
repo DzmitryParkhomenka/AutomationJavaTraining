@@ -17,3 +17,4 @@ Feature: Login to Google Email Account
       | To                      | Subject    | Textbox      |
       | dimos-eskimos@yandex.ru | Hello      | How are you? |
       | dimos.eskimos@gmail.com | Automation | Gherkin      |
+      

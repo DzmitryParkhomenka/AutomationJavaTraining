@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 
 import bo.PCN;
 import com.codeborne.selenide.SelenideElement;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Condition.visible;
@@ -22,9 +23,8 @@ public class PlexCustomerDetails {
 	}
 	
 	public static void fillCurrencyField() {
-		$(CURRENCY_FIELD).shouldBe(visible).sendKeys(PCN.getCurrency());
-		$(CURRENCY_FIELD).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
-		$(CURRENCY_FIELD).attr("value");
+		$(CURRENCY_FIELD).shouldBe(visible).sendKeys(PCN.getCurrency(), Keys.ARROW_DOWN, Keys.ENTER);
+		//$(CURRENCY_FIELD).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
 	}
 	
 	public static void fillCultureField() {
